@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Carbon Footprint Calculator</title>
+<style>
+  /* Container and border */
+  .container {
+    border: 1px solid green;
+    padding: 15px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+  }
+
+  /* Tabs container */
+  .tabs {
+    display: flex;
+    border-bottom: none;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+
+  /* Each tab style */
+  .tab {
+    background-color: #777777;
+    color: white;
+    padding: 6px 12px;
+    margin-right: 2px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  /* Active tab style */
+  .tab.active {
+    background-color: white;
+    color: green;
+    border: 1px solid #777777;
+    border-bottom: 1px solid white;
+    padding-top: 8px;
+    font-weight: bold;
+  }
+
+  /* Green Calculator icon on left */
+  .icon {
+    float: left;
+    width: 50px;
+    margin-right: 15px;
+    margin-top: 5px;
+  }
+
+  /* Heading style */
+  .main-heading {
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+    clear: both;
+  }
+
+  /* Small link (why?) style */
+  .why-link {
+    font-size: smaller;
+    color: green;
+    text-decoration: none;
+  }
+
+  /* Form row styling */
+  .form-row {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  /* Label spacing */
+  label {
+    display: inline-block;
+    width: 60px;
+  }
+
+  /* Dropdown styling */
+  select {
+    width: 180px;
+  }
+
+  /* Date inputs margin */
+  input[type="date"] {
+    width: 100px;
+    margin: 0 5px;
+  }
+
+  /* Save button style */
+  .save-btn {
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+  }
+
+  /* Paragraph margins */
+  p {
+    margin: 10px 0;
+  }
+
+  /* Clear fix */
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  /* Right aligned House > button */
+  .next-btn-container {
+    text-align: right;
+    margin-top: 20px;
+  }
+
+  .next-btn {
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 1px;
+  }
+
+  /* Footer link style */
+  .footer-link {
+    text-align: center;
+    margin-top: 25px;
+  }
+
+  .footer-link a {
+    color: green;
+    font-size: smaller;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="tab active">Welcome</div>
+    <div class="tab">House</div>
+    <div class="tab">Flights</div>
+    <div class="tab">Car</div>
+    <div class="tab">Motorbike</div>
+    <div class="tab">Bus & Rail</div>
+    <div class="tab">Secondary</div>
+    <div class="tab">Results</div>
+  </div>
+
+  <!-- Content inside container -->
+  <div>
+    <!-- Icon -->
+    <img src="https://img.icons8.com/ios-filled/50/008000/calculator.png" alt="Calculator Icon" class="icon" />
+    
+    <div class="clearfix">
+      <h2 class="main-heading">Welcome to the web's leading carbon footprint calculator</h2>
+      
+      <p>
+        First, please tell us where you live: 
+        <a href="#" class="why-link">[why?]</a>
+      </p>
+      
+      <div class="form-row">
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+          <option>United States</option>
+          <option>Canada</option>
+          <option>United Kingdom</option>
+          <option>Australia</option>
+          <option>Other</option>
+        </select>
+      </div>
+      
+      <div class="form-row">
+        <label for="state">State:</label>
+        <select id="state" name="state">
+          <option>(average for country)</option>
+          <option>California</option>
+          <option>New York</option>
+          <option>Texas</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <p>Carbon footprint calculations are typically based on annual emissions from the previous 12 months<br>
+      Enter the period this calculation covers (optional):</p>
+
+      <div class="form-row">
+        <label>from</label>
+        <input type="date" id="from-date" name="from-date"/>
+        <label>to</label>
+        <input type="date" id="to-date" name="to-date"/>
+        <button class="save-btn">Save</button>
+      </div>
+      
+      <p>
+        Next, select the appropriate tab above to calculate the part of your lifestyle you are most interested in, e.g. your flights.<br>
+        Or, visit each of the tabs above to calculate your full carbon footprint.
+      </p>
+
+      <p>
+        Following your calculation, you can offset / neutralise your emissions through one of our climate-friendly projects.
+      </p>
+    </div>
+  </div>
+  
+  <!-- Next House button -->
+  <div class="next-btn-container">
+    <button class="next-btn">House &gt;</button>
+  </div>
+
+  <!-- Footer link -->
+  <div class="footer-link">
+    <a href="#">add our CO<sub>2</sub> calculation tools to your website</a>
+  </div>
+
+</div>
+
+</body>
+</html>
